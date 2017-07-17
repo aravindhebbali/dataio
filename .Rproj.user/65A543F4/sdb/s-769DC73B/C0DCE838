@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(readr)\nlibrary(readxl)\nlibrary(haven)\nlibrary(jsonlite)\nlibrary(xml2)\n\n# comma separated values\nread.csv('hsb2.csv', header = TRUE)\n\n# using readr\nread_csv('hsb2.csv')\nread_delim('hsb2.csv', delim = ',')\n\n# data does not include column names\nread_csv('hsb2.csv', col_names = FALSE)\nread_delim('hsb2.csv', delim = ',', col_names = FALSE)\n\n# skip a few lines\nread_csv('hsb2.csv', skip = 5)\nread_delim('hsb2.csv', delim = ',', skip = 5)\n\n# maximum number of lines to read\nread_csv('hsb2.csv', n_max = 50)\nread_delim('hsb2.csv', delim = ',', n_max = 50)\n\n\n# specify column types\nread_csv('hsb2.csv',\n  col_types = list(col_integer(), col_factor(levels = c(0, 1)), \n                   col_factor(levels = c(1, 2, 3, 4)),\n                   col_factor(levels = c(1, 2, 3)), \n                   col_factor(levels = c(1, 2)), \n                   col_factor(levels = c(1, 2, 3)),\n                   col_integer(), col_integer(), col_integer(),\n                   col_integer(), col_integer())            \n)\n\n# read only specific columns\nread_csv('hsb2.csv', \n  col_types = cols_only(id = col_integer(),\n                        prog = col_factor(levels = c(1, 2, 3)),\n                        read = col_integer())\n)\n\n# explain parse_* functions\n# parse_character()\n# parse_date()\n# parse_datetime()\n# parse_double()\n# parse_factor()\n# parse_integer()\n# parse_guess()\n# spec_csv()\n\n\n",
+    "created" : 1500253422954.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3585869955",
+    "id" : "C0DCE838",
+    "lastKnownWriteTime" : 1500272925,
+    "last_content_update" : 1500272925185,
+    "path" : "J:/gist/dataio/import-blog-part-1.R",
+    "project_path" : "import-blog-part-1.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
